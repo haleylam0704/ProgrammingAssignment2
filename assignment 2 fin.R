@@ -1,3 +1,4 @@
+# create matrix that can have its inverse solved
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
         set <- function(y) {
@@ -12,11 +13,12 @@ makeCacheMatrix <- function(x = matrix()) {
                 inv <- solve(x)
                 return(inv) 
         }
+
         list(set = set, get = get,
             cacheInverse = cacheInverse)
 }
 
-
+# function to solve matrix inversion
 cacheSolve <- function(x, ...)
 {
         inv <- x$cacheInverse()
